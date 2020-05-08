@@ -54,10 +54,8 @@ let lebCoin = new Blockchain();
 lebCoin.addBlock(new Block(1, "05/05/2020", { amount: 4 }));
 lebCoin.addBlock(new Block(2, "07/05/2020", { amount: 10 }));
 
-//console.log(lebCoin);
+console.log(lebCoin); // print blockchain
 
-//console.log(JSON.stringify(lebCoin, null, 4));
+lebCoin.chain[1].data = { amount: 100 }; // modify chain
 
-lebCoin.chain[1].data = { amount: 100 };
-
-console.log('Is blockchain valid? ' + lebCoin.isChainValid());
+console.log('Is blockchain valid? ' + lebCoin.isChainValid()); // test validity after modification => false
